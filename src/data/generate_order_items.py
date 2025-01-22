@@ -9,7 +9,7 @@ fake = Faker()
 products_id_list = []
 with psycopg2.connect(**config()) as conn:
     with conn.cursor() as cur:
-        cur.execute('SELECT supplier_id FROM public."Products"')
+        cur.execute('SELECT product_id FROM public."Products"')
         for id in cur.fetchall():
             products_id_list.append(id[0])
 print(products_id_list)
@@ -17,7 +17,7 @@ print(products_id_list)
 orders_id_list = []
 with psycopg2.connect(**config()) as conn:
     with conn.cursor() as cur:
-        cur.execute('SELECT supplier_id FROM public."Orders"')
+        cur.execute('SELECT order_id FROM public."Orders"')
         for id in cur.fetchall():
             orders_id_list.append(id[0])
 print(orders_id_list)
