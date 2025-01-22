@@ -32,27 +32,36 @@ for i in range(0, 100):
     match category:
         case 'Electronics':
             product = choice(electronics)
+            price = round(uniform(0.0, 2000.0),2)
         case 'Music':
             product = choice(music)
+            price = round(uniform(0.0, 5000.0),2)
         case 'Home':
             product = choice(home)
+            price = round(uniform(0.0, 15000.0),2)
         case 'Garden':
             product = choice(garden)
+            price = round(uniform(0.0, 5000.0),2)
         case 'Beauty':
             product = choice(beauty)
+            price = round(uniform(0.0, 500.0),2)
         case 'Health':
             product = choice(health)
+            price = round(uniform(0.0, 500.0),2)
         case 'Toys':
             product = choice(toys)
+            price = round(uniform(0.0, 200.0),2)
         case 'Automotive':
             product = choice(automotive)
+            price = round(uniform(0.0, 20000.0),2)
         case 'Grocery':
             product = choice(grocery)
+            price = round(uniform(0.0, 100.0),2)
 
     supplier = {
         'name': product,
         'category': category,
-        'price': round(uniform(0.0, 9999.0),2),
+        'price': price,
         'supplier_id': choice(supplier_id_list),
         'stock_quantity': round(uniform(0.0, 100.0),2)
     }
@@ -60,12 +69,12 @@ for i in range(0, 100):
 
 print(products_list)
 
-# with psycopg2.connect(**config()) as conn:
-#     with conn.cursor() as cur:
-#         for row in products_list:
-#             cur.execute('INSERT INTO public."Suppliers" (name, contact_info, country) VALUES (%s, %s, %s)', (row['name'], row['contact_info'], row['country']))
+with psycopg2.connect(**config()) as conn:
+    with conn.cursor() as cur:
+        for row in products_list:
+            cur.execute('INSERT INTO public."Products" (name, category, price, supplier_id, stock_quantity) VALUES (%s, %s, %s, %s, %s)', (row['name'], row['category'], row['price'], row['supplier_id'], row['stock_quantity']))
 
-# with psycopg2.connect(**config()) as conn:
-#     with conn.cursor() as cur:
-#         cur.execute('SELECT * FROM public."Suppliers"')
-#         print(cur.fetchall())
+with psycopg2.connect(**config()) as conn:
+    with conn.cursor() as cur:
+        cur.execute('SELECT * FROM public."Products"')
+        print(cur.fetchall())
