@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "SQL projekti"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e532a482-5d08-40d7-a521-698d302aa195"
+  }
+}

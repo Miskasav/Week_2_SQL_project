@@ -10,7 +10,7 @@
 
 -- SELECT  SUM(quantity * price_at_purchase) AS "Total sales per category", category FROM public."Order_Items", public."Products" GROUP BY category;  -- Total sales per category
 
-SELECT COUNT(OI.order_id) AS "Orders", SUM(price_at_purchase * quantity) AS "Total sales", order_date 
+SELECT COUNT(OI.order_id) AS "Orders", SUM(price_at_purchase * quantity) AS "Total sales", DATE_TRUNC('month', order_date) AS "Order month" 
 FROM public."Order_Items" AS OI, public."Orders" AS O 
 GROUP BY order_date 
 ORDER BY order_date; -- Monthly breakdown of the number of orders and total sales

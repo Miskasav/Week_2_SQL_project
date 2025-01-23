@@ -1,0 +1,51 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.61\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"13af81a45b7c5b625a27\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"D_Suppliers\"}},\"Property\":\"name\"}},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}},{\"name\":\"8b29a35ee96bb0730b85\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"D_Date\"}},\"Property\":\"Year\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"D_Date\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":1,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Year\"}},\"Right\":{\"Literal\":{\"Value\":\"2000L\"}}}}}]},\"type\":\"Advanced\",\"howCreated\":1}]",
+      "height": 720.00,
+      "name": "0b77bb5e3620504c3a92",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"34ef2c9cd663248a20b0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16.466607480862326,\"y\":12.349955610646745,\"z\":0,\"width\":1254.2066031256807,\"height\":179.76046499941373}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Values\":[{\"queryRef\":\"Mittarit.Orders Total\"},{\"queryRef\":\"Mittarit.Total Sales\"},{\"queryRef\":\"Mittarit.Products with low stock\"},{\"queryRef\":\"Mittarit.Products high onstock\"},{\"queryRef\":\"Mittarit.Sales per order\"}],\"Rows\":[{\"queryRef\":\"D_Date.Year Month\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Mittarit\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"D_Date\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Orders Total\"},\"Name\":\"Mittarit.Orders Total\",\"NativeReferenceName\":\"Orders Total\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Sales\"},\"Name\":\"Mittarit.Total Sales\",\"NativeReferenceName\":\"Total Sales\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Products with low stock\"},\"Name\":\"Mittarit.Products with low stock\",\"NativeReferenceName\":\"Products with low stock\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Products high on stock\"},\"Name\":\"Mittarit.Products high onstock\",\"NativeReferenceName\":\"Products high on stock\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Sales per order\"},\"Name\":\"Mittarit.Sales per order\",\"NativeReferenceName\":\"Sales per order\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Year Month\"},\"Name\":\"D_Date.Year Month\",\"NativeReferenceName\":\"Year Month\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 179.76,
+          "width": 1254.21,
+          "x": 16.47,
+          "y": 12.35,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"f4aa381f369955e09e1d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16.466607480862326,\"y\":192.1104206100605,\"z\":1000,\"width\":1254.2066031256807,\"height\":473.4149650747919}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Mittarit.Total Sales\"},{\"queryRef\":\"Mittarit.Orders Total\"},{\"queryRef\":\"Mittarit.Sales per order\"}],\"Category\":[{\"queryRef\":\"D_Date.Year\"},{\"queryRef\":\"Date.Month\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Mittarit\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"D_Date\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Sales\"},\"Name\":\"Mittarit.Total Sales\",\"NativeReferenceName\":\"Total Sales\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Orders Total\"},\"Name\":\"Mittarit.Orders Total\",\"NativeReferenceName\":\"Orders Total\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Month\"},\"Name\":\"Date.Month\",\"NativeReferenceName\":\"Month\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Sales per order\"},\"Name\":\"Mittarit.Sales per order\",\"NativeReferenceName\":\"Sales per order\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Year\"},\"Name\":\"D_Date.Year\",\"NativeReferenceName\":\"Year\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 473.41,
+          "width": 1254.21,
+          "x": 16.47,
+          "y": 192.11,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}
